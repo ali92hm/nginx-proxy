@@ -12,7 +12,7 @@ You can also redirect non-www requests to www.
 
 You can change the default location of the Nginx configuration by passing the following optional parameter.
 ```bash
-sudo python nginx-config.py [node-app-name] -nginx-config-path [path-to-nginx config]
+sudo python nginx-config.py [node-app-name] -nginx-config-path [path-to-nginx-config]
 ```
 
 
