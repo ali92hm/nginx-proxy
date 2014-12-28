@@ -140,4 +140,4 @@ if not os.path.isfile(alias_path):
 	os.system('sudo ln -s {} {}'.format(config_file_path, alias_path))
 # Restarting NginX server
 os.system('sudo /etc/init.d/nginx restart')
-
+sys.stdout.write('Successfully configured nginx for {}\n'.format(args.app_name))
