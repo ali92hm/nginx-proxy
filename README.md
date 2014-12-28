@@ -21,7 +21,7 @@ sudo python nginx-config.py [node-app-name] -nginx-config-path [path-to-nginx co
 * Python2.7
 
 ##Structure
-    thing
+    lib
     ├── nginx-config.py         - Configuration script
 
 ##Potential Bugs:
