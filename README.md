@@ -18,7 +18,7 @@ sudo python nginx-config.py [node-app-name] -nginx-config-path [path-to-nginx co
 
 
 ##Dependencies
-* Python2.7
+* [Python2.7](https://www.python.org/download/releases/2.7/)
 
 ##Structure
     lib
