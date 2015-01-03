@@ -3,6 +3,15 @@
 Makes Nginx proxy configuration files. This script automatically generates Nginx configuration files that can act as proxy for node applications.
 
 ##Usage
+
+###Install
+
+You only need to clone this repository on your remote machine.
+``` bash
+git clone https://github.com/SirenLLC/node-nginx-proxy.git
+```
+
+###Execution
 This application needs sudo permissions because the default Nginx configuration is under `/etc/nginx/` which requires sudo permissions to be changed.
 ```bash
 sudo python nginx-config.py [node-app-name]
@@ -22,8 +31,11 @@ sudo python nginx-config.py [node-app-name] -nginx-config-path [path-to-nginx-co
 * [Nginx](http://nginx.org/en/download.html)
 
 ##Structure
-    lib
-    ├── nginx-config.py         - Configuration script
+	node-nginx-proxy
+	├── LICENSE-MIT
+	├── README.md
+	└── lib
+		└── nginx-proxy.py		- Generator script
 
 ##Potential Bugs:
 * This script will not work under the Windows operating system.
