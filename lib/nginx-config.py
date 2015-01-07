@@ -55,8 +55,8 @@ server {{
 		root {path};
 		error_page 404 /404.html;
 		location = /404.html {{
-        	internal;
-        }}
+			internal;
+		}}
 	}}
 }}\n"""
 
@@ -64,10 +64,10 @@ server {{
 
 parser = argparse.ArgumentParser(description='Makes nginx configuration file for node applications.')
 parser.add_argument('app_name', type=None, help='Name of your Application')
-parser.add_argument('-nginx-config-path', type=None, default='/etc/nginx/', help='Path to the nginx')
+parser.add_argument('-config-path', type=None, default='/etc/nginx/', help='Path to the nginx')
 args = parser.parse_args()
 
-config_file_path = os.path.join(args.nginx_config_path, 'sites-available', args.app_name) 
+config_file_path = os.path.join(args.config_path, 'sites-available', args.app_name) 
 
 with open(config_file_path,'wb') as config_file:
 	try:
@@ -130,7 +130,7 @@ with open(config_file_path,'wb') as config_file:
 					protocol='https'))
 
 		# Static web hosting
-		if raw_input('Is this an static application? [y/n] ').lower() == 'y':
+		if raw_input('Is this a static application? [y/n] ').lower() == 'y':
 			serve_path = raw_input('Enter the path for your static files: ')
 			config_file.write(nginx_static_server_template.format(port=port, domain=domain_name, app_name=args.app_name, path=os.path.abspath(serve_path)))
 		# Proxy configuration
@@ -142,12 +142,12 @@ with open(config_file_path,'wb') as config_file:
 				address = raw_input('Enter the address of the machine running the server (Default 127.0.0.1) ').strip()
 				if address == '':
 					address = '127.0.0.1'
-				port = raw_input('Enter the port that this server is running on (Example 3000) ').strip()
+				app_port = raw_input('Enter the port that this server is running on (Example 3000) ').strip()
 				weight = raw_input('Enter weight of this server (Default 1) ').strip()
 				if weight == '':
-					server_list.append('\tserver {}:{};'.format(address, port))
+					server_list.append('\tserver {}:{};'.format(address, app_port))
 				else:
-					server_list.append('\tserver {}:{} weight={};'.format(address, port, weight))
+					server_list.append('\tserver {}:{} weight={};'.format(address, app_port, weight))
 				if 'n' == raw_input('Would you like to add more servers? [y/n] ').strip().lower():
 					break
 			config_file.write(upstream_template.format(app_name=args.app_name, servers='\n'.join(server_list)))
@@ -158,7 +158,7 @@ with open(config_file_path,'wb') as config_file:
 		sys.exit(-1)
 
 # Creating a symbolic link from configuration in sites-available to sites-enabled
-alias_path = os.path.join(args.nginx_config_path, 'sites-enabled', args.app_name)
+alias_path = os.path.join(args.config_path, 'sites-enabled', args.app_name)
 if not os.path.isfile(alias_path):
 	os.system('sudo ln -s {} {}'.format(config_file_path, alias_path))
 # Restarting NginX server
