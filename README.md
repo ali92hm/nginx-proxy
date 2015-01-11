@@ -37,7 +37,7 @@ sudo python nginx-config.py [node-app-name] -nginx-config-path [path-to-nginx-co
 	└── lib
 		└── nginx-proxy.py		- Generator script
 
-##Potential Bugs:
+##[Potential Bugs](https://github.com/SirenLLC/node-nginx-proxy/issues)
 * This script will not work under the Windows operating system.
 * SSL configuration is not tested.
 
