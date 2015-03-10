@@ -1,4 +1,4 @@
-#Node Nginx Proxy
+#Nginx Proxy Config
 
 Makes Nginx proxy configuration files. This script automatically generates Nginx configuration files that can act as proxy for node applications.
 
