@@ -1,17 +1,17 @@
-#Nginx Proxy Config
+# Nginx Proxy Config
 
 Makes Nginx proxy configuration files. This script automatically generates Nginx configuration files that can act as proxy for node applications.
 
-##Usage
+## Usage
 
-###Install
+### Install
 
 You only need to clone this repository on your remote machine.
 ``` bash
-git clone https://github.com/SirenLLC/node-nginx-proxy.git
+git clone https://github.com/Ali92hm/node-nginx-proxy.git
 ```
 
-###Execution
+### Execution
 This application needs sudo permissions because the default Nginx configuration is under `/etc/nginx/` which requires sudo permissions to be changed.
 ```bash
 sudo python nginx-config.py [node-app-name]
@@ -26,24 +26,24 @@ sudo python nginx-config.py [node-app-name] -nginx-config-path [path-to-nginx-co
 
 
 
-##Dependencies
+## Dependencies
 * [Python2.7](https://www.python.org/download/releases/2.7/)
 * [Nginx](http://nginx.org/en/download.html)
 
-##Structure
+## Structure
 	node-nginx-proxy
 	├── LICENSE-MIT
 	├── README.md
 	└── lib
 		└── nginx-proxy.py		- Generator script
 
-##[Potential Bugs](https://github.com/SirenLLC/node-nginx-proxy/issues)
+## [Potential Bugs](https://github.com/Ali92hm/node-nginx-proxy/issues)
 * This script will not work under the Windows operating system.
 * SSL configuration is not tested.
 
-##To do
+## To do(https://github.com/Ali92hm/node-nginx-proxy/milestones)
 * Add SSL redirection
 * Make an npm module and put on npm
 
-##License
+## License
 [MIT license](http://opensource.org/licenses/MIT)
