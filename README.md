@@ -8,7 +8,7 @@ Makes Nginx proxy configuration files. This script automatically generates Nginx
 
 You only need to clone this repository on your remote machine.
 ``` bash
-git clone https://github.com/Ali92hm/node-nginx-proxy.git
+git clone https://github.com/ali92hm/node-nginx-proxy.git
 ```
 
 ### Execution
@@ -35,13 +35,13 @@ sudo python nginx-config.py [node-app-name] -nginx-config-path [path-to-nginx-co
 	├── LICENSE-MIT
 	├── README.md
 	└── lib
-		└── nginx-proxy.py		- Generator script
+           └── nginx-proxy.py		- Generator script
 
 ## [Potential Bugs](https://github.com/Ali92hm/node-nginx-proxy/issues)
 * This script will not work under the Windows operating system.
 * SSL configuration is not tested.
 
-## To do(https://github.com/Ali92hm/node-nginx-proxy/milestones)
+## [To do](https://github.com/Ali92hm/node-nginx-proxy/milestones)
 * Add SSL redirection
 * Make an npm module and put on npm
 
